@@ -1,4 +1,5 @@
 //inspired by this video https://www.youtube.com/watch?v=ZzNO3FvkTJM&t=57s
+float drag = 0.3;//speed *= drag
 int n = 5000;
 float noiseS = 1000;
 PImage img;
@@ -73,7 +74,7 @@ class Agent{
     }
     vel.add(grad);
     pos.add(vel);
-    vel.setMag(constrain(vel.mag()*.3, 0, 2));
+    vel.setMag(constrain(vel.mag()*drag, 0, 2));
   }
   
   void show(){
