@@ -17,7 +17,7 @@ void setup() {
   sines = new SineWave[img.height/si];
 
   noStroke();
-  fill(255);
+  fill(0);
   for (int j=0; j<img.height/si; j++) {
     sines[j] = new SineWave(440*pow(pow(2, 1./12), j*si/octDiv), 0.2, out.sampleRate());
     sines[j].portamento(100);
@@ -32,7 +32,7 @@ void draw() {
   for (int j=0; j<img.height/si; j++) {
     float bright = brightness(img.pixels[imgIx(sampleX, j*si)]);
     sines[j].setAmp(bright/255/10);//https://yoppa.org/bma10/1365.html
-    rect(sampleX+bright*0.1, j*si, 5, 5);
+    rect(sampleX+bright*0.1, j*si, 20, 20);
   }
 }
 
