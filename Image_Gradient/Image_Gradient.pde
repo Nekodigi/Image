@@ -50,6 +50,7 @@ PVector gradientAtPos(PVector pos){
 
 class Agent{
   PVector pos;
+  PVector initPos;
   PVector vel;
   
   Agent(){
@@ -74,6 +75,7 @@ class Agent{
     }
     vel.add(grad);
     pos.add(vel);
+    //pos.y = lerp(pos.y, initPos.y, 0.1);move to initial y
     vel.setMag(constrain(vel.mag()*drag, 0, 2));
   }
   
@@ -84,6 +86,7 @@ class Agent{
   
   void reset(){
     pos = new PVector(random(offx, width-offx), random(height));//ensure in the image and prevent stop
+    initPos = pos.copy();
     vel = PVector.random2D();
   }
 }

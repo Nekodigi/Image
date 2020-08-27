@@ -3,7 +3,7 @@ float noiseP = 0.1;//nosie power
 int partiL = 100;//particle lifetime
 int partiS = 1;//particle size
 
-DisolveImg disolveImg;
+DissolveImg dissolveImg;
 
 void setup(){
   size(500, 500, P3D);
@@ -19,18 +19,18 @@ void setup(){
   pg.text("Nekodigi", pg.width/2, pg.height/2);
   pg.endDraw();
   //create disolve img
-  disolveImg = new DisolveImg(new PVector(0, 0), pg, partiL, noiseS, noiseP, partiL, true);
-  disolveImg.toParticles(partiS, true);
+  dissolveImg = new DissolveImg(new PVector(0, 0), pg, partiL, noiseS, noiseP, partiL, true);
+  dissolveImg.toParticles(partiS, true);
 }
 
 void draw(){
   background(0);
   noStroke();
-  disolveImg.update();
-  disolveImg.show();
+  dissolveImg.update();
+  dissolveImg.show();
 }
 
-class DisolveImg{
+class DissolveImg{
   PImage img;
   PVector imgOff;
   int lifeTime;
@@ -39,7 +39,7 @@ class DisolveImg{
   float noiseP;
   ArrayList<Particle> particles = new ArrayList<Particle>();
    //                                                                             sampling interval if pixel is black, dont create particle
-  DisolveImg(PVector imgOff, PImage img, int lifeTime, float noiseS, float noiseP, int sampItv, boolean blackAsNone){
+  DissolveImg(PVector imgOff, PImage img, int lifeTime, float noiseS, float noiseP, int sampItv, boolean blackAsNone){
     this.imgOff = imgOff;
     this.img = img;
     this.lifeTime = lifeTime;
