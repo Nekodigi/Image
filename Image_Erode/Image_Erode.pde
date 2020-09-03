@@ -3,7 +3,7 @@ float[][] gaussMat;
 int matSize = 10;
 void setup(){
   size(500, 500);
-  img = loadImage("FevCat.png");
+  img = loadImage("ErodeTest.png");
   
   gaussMat = getGaussMat(10, matSize);
   image(img, 0, 0, width, height);
@@ -57,13 +57,3 @@ float[][] getGaussMat(float sigma, int size){
 float gaussF(float sigma, float x2){
   return exp(-x2/(2*sigma*sigma))/(2*PI*sigma*sigma);
 }
-
-void setup(){
-  
-  
-}
-
-
-void draw(){
-  
-  
