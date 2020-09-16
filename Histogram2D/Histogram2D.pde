@@ -1,5 +1,5 @@
-//based on this site en https://docs.opencv.org/3.4/d8/dbc/tutorial_histogram_calculation.html
-//jp http://labs.eecs.tottori-u.ac.jp/sd/Member/oyamada/OpenCV/html/py_tutorials/py_imgproc/py_histograms/py_histogram_begins/py_histogram_begins.html
+//based on this site en https://docs.opencv.org/master/dd/d0d/tutorial_py_2d_histogram.html
+//jp https://docs.opencv.org/master/dd/d0d/tutorial_py_2d_histogram.html
 PImage img;
 int divres = 1;//divide resolution
 int[][]records = new int[256/divres][256/divres];
